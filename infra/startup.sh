@@ -24,8 +24,6 @@ function dockerRun() {
       --mount type=bind,src="$(pwd)",dst=/repo \
       --workdir /repo \
       "$baseImage"
-   # and set the docker run timestamp
-   touch src/docker-run.timestamp.txt
 }
 
 # check if there is a running containers with our name
