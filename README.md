@@ -2,7 +2,7 @@
 
 a template for doing work in any given language, using local docker
 
-## `/*` (overview)
+## `./*` (overview)
 
 ```
 # source code
