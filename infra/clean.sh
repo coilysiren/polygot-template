@@ -5,4 +5,4 @@ set -o xtrace
 
 name=$1
 
-ls
+docker rm "$name" -f
