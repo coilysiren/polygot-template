@@ -17,8 +17,5 @@ build: ## ⚙️  Build into local environment
 test: build ## ✅ Run all checks - tests, linters, etc.
 	@docker exec $(name) infra/test.sh $(name)
 
-ship: test ## 🚀 Build, test, package, release, and deploy
-	@docker exec $(name) infra/ship.sh $(name)
-
 clean: ## 🗑️  Clear local files and assets
 	@./infra/clean.sh $(name)

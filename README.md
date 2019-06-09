@@ -34,7 +34,6 @@ All of the code that's required to _accomplish your goals_ but not necessarily _
 - `infra/startup.sh` (startup a local container)
 - `infra/build.sh` (run local build processes)
 - `infra/test.sh` (run local tests, likely calls out to `src/tests`)
-- `infra/ship.sh` (package, release, deploy, etc)
 - `infra/clean.sh` (cleanup files and assets)
 
 You will _definitely_ want to add many many more special purpose infra scripts as the needs for your application grow.
