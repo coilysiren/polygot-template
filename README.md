@@ -1,15 +1,26 @@
-# polygot-skeleton
+# polygot-template
 
-a skeleton for doing work in any given language, using local docker
+a template for doing work in any given language, using local docker
 
-## `/` (top level view)
+## `/*` (overview)
 
-The top level is your public face, so keep it as small as possible. It has a few highlights, that are explained below
+```
+# source code
+src/core/*
+src/tests/*
 
-- `src/` (source code)
-- `infra/` (necessary infrastructure)
-- `Makefile` (common local dev front door)
-- `repo.yml` (config)
+# common local dev entrypoint
+Makefile
+
+# necessary infrastructure
+infra/start.sh
+infra/build.sh
+infra/test.sh
+infra/clean.sh
+
+# config
+repo.yml
+```
 
 ## `src/*` (source code)
 
@@ -27,6 +38,14 @@ src/core/application/logic_test.py
 
 Do totally keep them there! In cases like that, your `src/tests` folder is used for _end to end tests_ and their relatives.
 
+## `Makefile` (common local dev entrypoint)
+
+Makefiles are (in our usage) a special case. They're formatted in a way that's great for visually scanning through them, if you choose to use them for that purpose.
+
+Our makefiles focus on the common commands that new / returning developers need to run. Those commands should have well known names and always come with humanized descriptions. Anything that's hyper-special-purpose or hard to describe should go inside a `infra/*.sh` and not get a makefile target.
+
+In our dockerized local dev world, the makefile mostly contains calls to bash and docker.
+
 ## `infra/*` (necessary infrastructure)
 
 All of the code that's required to _accomplish your goals_ but not necessarily _directly related to your particular repo_? That's "infrastructure", and it goes in `infra/*`. You'll want the following (distinct) infra scripts
@@ -38,17 +57,9 @@ All of the code that's required to _accomplish your goals_ but not necessarily _
 
 You will _definitely_ want to add many many more special purpose infra scripts as the needs for your application grow.
 
-## `Makefile` (common local dev front door)
-
-Makefiles are (in our usage) a special case. They're formatted in a way that's great for visually scanning through them, if you choose to use them for that purpose.
-
-Our makefiles focus on the common commands that new / returning developers need to run. Those commands should have well known names (`build`, and `test` are perfect examples here) and always come with humanized descriptions. Anything that's hyper-special-purpose or hard to describe should go inside a `infra/*.sh` and not get a makefile target.
-
-In our dockerized local dev world, the makefile mostly contains calls to bash and docker.
-
 ## `repo.yml` (config)
 
-Try to centralize your infrastructure configuration into one place, rather than letting it become scattered across your many script files.
+Try to centralize your infrastructure configuration into one place, rather than letting it become scattered across your many script files. Add anything you need here, this repo includes some basic polygot template basics.
 
 - `name` (the name of your repo)
 - `baseImage` (a necessary component of our polygot dockerized world)
