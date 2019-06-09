@@ -1,2 +1,3 @@
 # repo metadata
-name: dev-container
+name: polygot-skeleton
+baseImage: lynncyrin:dev-container
