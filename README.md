@@ -1,3 +1,9 @@
+⚠ ARCHIVED ⚠
+
+The ideas expressed here run counter to current conventional software engineering practices (eg. for the individual languages) and therefore aren't really possible to implement in a sustainable manner.
+
+---
+
 # polygot-template
 
 a template for doing work in any given language, using local docker
